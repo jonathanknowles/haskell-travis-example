@@ -1,0 +1,47 @@
+name:                haskell-travis-example
+version:             0.1.0.0
+github:              "jonathanknowles/haskell-travis-example"
+license:             BSD3
+author:              "Jonathan Knowles"
+maintainer:          "mail@jonathanknowles.net"
+copyright:           "Jonathan Knowles"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/jonathanknowles/haskell-travis-example#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: library
+
+executables:
+  haskell-travis-example-exe:
+    main:                Main.hs
+    source-dirs:         application
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - haskell-travis-example
+
+tests:
+  haskell-travis-example-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - haskell-travis-example
