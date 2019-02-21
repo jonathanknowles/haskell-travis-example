@@ -1,1 +1,1 @@
-# haskell-travis-test
+An example of using Travis with Haskell.
