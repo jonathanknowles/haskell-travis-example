@@ -23,18 +23,9 @@ before_install:
 - export PATH=$HOME/.local/bin:$PATH
 - travis_retry curl -L https://get.haskellstack.org/stable/linux-x86_64.tar.gz | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 
-jobs:
-  include:
-    - stage: setup
-      script:
-      - stack --no-terminal setup
-    - stage: dependencies
-      script:
-      - stack --no-terminal build --only-dependencies
-    - stage: build
-      script:
-      - stack --no-terminal build --test --no-run-tests
-    - stage: test
-      script:
-      - stack --no-terminal test
+install:
+- stack --no-terminal setup
+- stack --no-terminal build --only-dependencies
+- stack --no-terminal build --test --no-run-tests
+- stack --no-terminal test
 
