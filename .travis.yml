@@ -34,12 +34,15 @@ install:
 - curl -sSL https://raw.github.com/ndmitchell/hlint/master/misc/run.sh | sh -s .
 - curl -sSL https://raw.github.com/ndmitchell/weeder/master/misc/travis.sh | sh -s .
 - stack --no-terminal install
+- sha256sum $HOME/.local/bin/haskell-travis-example-exe > $HOME/.local/bin/haskell-travis-example-exe.sha256
 
 deploy:
   provider: releases
   api_key:
     secure: nVJfJ9/9XFGklhNfIy8fiI6PuW82Tf9Y7fx/2BfChIW1DXsyQo/PClQtejncVyAqxhyAxd3Pha77EJpknTQaQwH46Pm2WZoRGswRdOtFx+OdREqZ864Xycd/kWCbKPyEQPjK1i33NLycRpHT4gRjGCtS95CiZuWA5GT+SGT/YGu/+g5mOab2ZQ1FzQJ/W3D5HZv6EGpQ9viCWbOYCu/Z3tdy6xvFT/DvfKXOtPNuhDUsGAaPDzT0um7WPsgq+sVXdOzUcopUCq7GtM4JU5eWWt2Yl2TXnMYbbvJNQW6h5cSptNe2c/tVFgEb+wR6RwD0TGE4L10otmNfEqfBFVAalGC6q4IcPem76HabSQLQ6WBCM7QWGXSMs2klLJxuFjUmnG4V+ditZiq2TDMGImKQgCv9rlBLCM/9nn7kkaYwYpc6HUs9dHr44k2KzkTff3GAyRud8dugIMX1tw0eSkYEeFgBIofEsSLRS1TKqG66K1s0mOw8XubFn4t17VZjMnMqwbTZ6Yq4UZusQDfuAgkd4+ywX3e5+WY6JQ+efh7mknGJ/moS45gSJ5hSdxsi5jDGfAJGzmHZRZZMLcbWYLgu8bKabPu0IptTHo640+tfhjhiHqsdHyPQUVo2QZddBjN9fp8kXCQMTrzWN0cpNEb93pfYXM5vhG6WNjJkKL9HPLc=
-  file: $HOME/.local/bin/haskell-travis-example-exe
+  file:
+    - $HOME/.local/bin/haskell-travis-example-exe
+    - $HOME/.local/bin/haskell-travis-example-exe.sha256
   on:
     repo: jonathanknowles/haskell-travis-example
 
