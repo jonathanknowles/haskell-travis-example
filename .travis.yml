@@ -7,8 +7,9 @@ sudo: false
 dist: xenial
 
 env:
-- EXECUTABLE=$HOME/.local/bin/haskell-travis-example-exe
-- EXECUTABLE_CHECKSUM=$HOME/.local/bin/haskell-travis-example-exe.sha256
+  global:
+    - EXECUTABLE=$HOME/.local/bin/haskell-travis-example-exe
+    - EXECUTABLE_CHECKSUM=$HOME/.local/bin/haskell-travis-example-exe.sha256
 
 # Do not choose a language; we provide our own build tools:
 language: generic
