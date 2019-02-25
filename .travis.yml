@@ -40,6 +40,8 @@ install:
 - curl -sSL https://raw.github.com/ndmitchell/weeder/master/misc/travis.sh | sh -s .
 - stack --no-terminal install
 - sha256sum $EXECUTABLE > $EXECUTABLE_CHECKSUM
+- ls $EXECUTABLE
+- ls $EXECUTABLE_CHECKSUM
 
 deploy:
   provider: releases
