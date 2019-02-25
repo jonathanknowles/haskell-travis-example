@@ -1,5 +1,8 @@
 # See https://raw.githubusercontent.com/commercialhaskell/stack/stable/doc/travis-simple.yml
 
+# Use small container and not VM:
+sudo: false
+
 # Choose a build environment:
 dist: xenial
 
