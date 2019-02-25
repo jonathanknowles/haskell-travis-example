@@ -28,6 +28,7 @@ install:
 - stack --no-terminal build --only-dependencies
 - stack --no-terminal build --test --no-run-tests
 - stack --no-terminal test
+- curl -sSL https://raw.github.com/ndmitchell/hlint/master/misc/run.sh | sh -s .
 - stack --no-terminal install
 
 deploy:
