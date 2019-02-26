@@ -39,7 +39,7 @@ install:
 - curl -sSL https://raw.github.com/ndmitchell/hlint/master/misc/run.sh | sh -s .
 - curl -sSL https://raw.github.com/ndmitchell/weeder/master/misc/travis.sh | sh -s .
 - stack --no-terminal install
-- sha256sum $EXECUTABLE | cut -d " " -f 1 > $EXECUTABLE_CHECKSUM
+- sha256sum $EXECUTABLE | head -c 64 > $EXECUTABLE_CHECKSUM
 - ls $EXECUTABLE
 - ls $EXECUTABLE_CHECKSUM
 
